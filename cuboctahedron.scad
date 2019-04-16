@@ -22,7 +22,7 @@ holeLen = 20;       // hole length
 holeWidth = 4;      // stick width ( 4=4mm)
 holeOffset = 3.5;   // hole offsets from center
 
-// Invisible Stick for holes
+// Invisible stick for drilling holes
 module hole( ) 
 {
     cylinder(h = holeLen, 
@@ -32,6 +32,7 @@ module hole( )
 
 // Create the node
 // The holes needed are drilled at 45 degrees from top down.
+// Four holes in total.
 // Two pairs of holes 180 degress apart.
 // Each hole 90 degress apart.
 difference()
