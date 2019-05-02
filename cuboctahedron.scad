@@ -13,9 +13,9 @@
 ////////////////////////////////////////////////////////
 
 // Node variables
-nq = 90;        // Node quality
-sq = 90;        // Node quality
-nodesz = 7.5;   // ball size
+nQual = 90;        // Node quality
+hQual = 90;        // Hole quality
+nodeSz = 7.5;      // ball size
 
 // Hole variables
 holeLen = 20;       // hole length
@@ -27,7 +27,7 @@ module hole( )
 {
     cylinder(h = holeLen, 
              d = holeWidth, 
-             $fn = sq);
+             $fn = hQual);
 }
 
 // Create the node
@@ -41,7 +41,7 @@ difference()
         difference()
         {
             rotate([0, 0, 0]) translate([ 0, 0, 0 ]) 
-            sphere(nodesz, $fn =nq);
+            sphere(nodeSz, $fn = nQual);
             
             /// negative holes
             rotate([-45, 0, 0]) translate([0, 0, 3.5]) hole();
