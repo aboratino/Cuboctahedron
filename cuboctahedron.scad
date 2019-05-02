@@ -40,7 +40,6 @@ difference()
     rotate([0, -45, 0])
         difference()
         {
-            rotate([0, 0, 0]) translate([ 0, 0, 0 ]) 
             sphere(nodeSz, $fn = nQual);
             
             /// negative holes
