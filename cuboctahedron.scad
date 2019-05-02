@@ -37,18 +37,16 @@ module hole( )
 // Each hole 90 degress apart.
 difference()
 {
-    rotate([0, -45, 0])
-        difference()
-        {
-            sphere(nodeSz, $fn = nQual);
-            
-            /// negative holes
-            rotate([-45, 0, 0]) translate([0, 0, 3.5]) hole();
-            rotate([+45, 0, 0]) translate([0, 0, 3.5]) hole();
-            rotate([ 45,90, 0]) translate([0, 0, 3.5]) hole();
-            rotate([-45,90, 0]) translate([0, 0, 3.5]) hole();
-        }
+    // draw a sphere
+    sphere(nodeSz, $fn = nQual);
+        
+    /// draw negative holes
+    rotate([-45,-45, 0]) translate([0, 0, 3.5]) hole();
+    rotate([ 45,-45, 0]) translate([0, 0, 3.5]) hole();
+    rotate([ 45, 45, 0]) translate([0, 0, 3.5]) hole();
+    rotate([-45, 45, 0]) translate([0, 0, 3.5]) hole();
+
     // flatten top and bottom of node for quicker printing / less material
     translate([0,0,-10.5]) cube([15,15,20],center=true);
-    translate([0,0,16.5]) cube([15,15,20],center=true);
+    translate([0,0, 16.5]) cube([15,15,20],center=true);
 }
